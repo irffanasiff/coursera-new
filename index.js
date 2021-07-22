@@ -7,6 +7,10 @@ const url = require('url')
 const dishRouter = require('./routes/dishRouters');
 
 
+const dishRouter = require('./routes/leaderRouter');
+const leaderRouter = require("./routes/leaderRouter");
+
+
 
 const hostname = "localhost";
 const port = 8000;
@@ -20,6 +24,7 @@ app.use('/dishes', dishRouter);
 app.use('/dishes/:disheId', dishRouter);
 app.use('/promotions', promoRouter);
 app.use('/promotions/promotionId', promoRouter);
+app.use('/leaders', leaderRouter);
 
 const server = http.createServer(app);
 server.listen(port, hostname, () => {
