@@ -18,9 +18,8 @@ app.use(bodyParser.json()); //this allows us to parse the body of the request me
 
 app.use('/dishes', dishRouter);
 app.use('/dishes/:disheId', dishRouter);
-
-
 app.use('/promotions', promoRouter);
+app.use('/promotions/promotionId', promoRouter);
 
 const server = http.createServer(app);
 server.listen(port, hostname, () => {
