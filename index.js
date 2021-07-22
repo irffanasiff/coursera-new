@@ -2,6 +2,7 @@ const express = require("express");
 const http = require("http");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const promoRouter = require('./routes/promoRouter');
 
 const dishRouter = require('./routes/dishRouter');
 
@@ -17,6 +18,8 @@ app.use(bodyParser.json()); //this allows us to parse the body of the request me
 app.use('/dishes', dishRouter);
 app.use('/dishes/:disheId', dishRouter);
 
+
+app.use('/promotions', promoRouter);
 
 const server = http.createServer(app);
 server.listen(port, hostname, () => {
